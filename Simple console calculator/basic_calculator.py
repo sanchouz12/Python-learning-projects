@@ -66,12 +66,12 @@ def fractions_count():
 
     if (oper == "+"):
         if(num1_down == num2_down):
-            print (num1, oper, num2, "=", str(num1_up + num2_up) + "/" + num1_down * num2_down)
+            print (num1, oper, num2, "=", str(num1_up + num2_up) + "/" + str(num1_down))
         else:
             print (num1, oper, num2, "=", str(num1_up * num2_down + num2_up * num1_down) + "/" + str(num1_down * num2_down))
     elif (oper == "-"):
         if(num1_down == num2_down):
-            print (num1, oper, num2, "=", str(num1_up - num2_up) + "/" + num1_down * num2_down)
+            print (num1, oper, num2, "=", str(num1_up - num2_up) + "/" + str(num1_down))
         else:
             print (num1, oper, num2, "=", str(num1_up * num2_down - num2_up * num1_down) + "/" + str(num1_down * num2_down))
     elif (oper == "*"):
