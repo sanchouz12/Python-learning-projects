@@ -4,3 +4,5 @@ There are the folowing projects:
 * You can calculate integers and fractions
 2. Console movie app
 * You can add, find and see your movies
+3. App with files
+* This app is for practicing using files
