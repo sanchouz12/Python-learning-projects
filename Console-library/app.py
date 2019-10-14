@@ -1,4 +1,5 @@
 from utils import database
+from utils.errors import ContentNotFound, EmptyDatabase
 
 USER_CHOICE = """====================================
 Enter 'a' to add a book
@@ -40,9 +41,9 @@ def add_book():
 
 
 def list_books():
-    books = database.get_books()
+    try:
+        books = database.get_books()
 
-    if len(books):
         # printing in a bit nicer way
         read = "Yes" if books[0]['is_read'] == "True" else "No"
         print(f"Name - {books[0]['name']}\nAuthor - {books[0]['author']}\nIs read - {read}")
@@ -50,20 +51,30 @@ def list_books():
         for book in books[1:]:
             read = "Yes" if book['is_read'] == "True" else "No"
             print(f"\nName - {book['name']}\nAuthor - {book['author']}\nIs read - {read}")
-    else:
-        print("Book list is empty, nothing to show!")
+    except EmptyDatabase:
+        print(f"{EmptyDatabase.__name__}: Database is empty!")
 
 
 def mark_book():
     name = input("Input name of the book you want to mark as read: ")
 
-    database.mark(name)
+    try:
+        database.mark(name)
+    except ContentNotFound:
+        print(f"{ContentNotFound.__name__}: Nothing found! Thy to check your spelling")
+    except EmptyDatabase:
+        print(f"{EmptyDatabase.__name__}: Database is empty!")
 
 
 def del_book():
     name = input("Input name of the book you want to delete: ")
 
-    database.remove(name)
+    try:
+        database.remove(name)
+    except ContentNotFound:
+        print(f"{ContentNotFound.__name__}: Nothing found! Thy to check your spelling")
+    except EmptyDatabase:
+        print(f"{EmptyDatabase.__name__}: Database is empty!")
 
 
 if __name__ == "__main__":

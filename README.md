@@ -9,4 +9,4 @@ There are the folowing projects:
 4. Console library
 * You can add and delete a book, mark it as read, see all books
 * Data can't be lost, because it's saved into a file (of course, if you don't delete the file)
-* (NOT IMPLEMENTED YET) Using custom errors to check, if file has required (or any at all) content
+* Using custom errors to check, if file has required (or any at all) content (I don't know, if this errors are useful, but I made them)

@@ -1,4 +1,4 @@
-# from utils.errors import ContentNotFound, EmptyDatabase
+from utils.errors import ContentNotFound, EmptyDatabase
 
 books_file = "books.txt"
 
@@ -13,18 +13,19 @@ def get_books():
         with open(books_file, "r") as file:
             data = [line.strip().split(",") for line in file.readlines()]
 
-            return [  # [ [name, author, is_read], [name, author, is_read] ]
-                {
-                    "name": item[0],
-                    "author": item[1],
-                    "is_read": item[2]
-                }
-                for item in data
-            ]
+            if data:
+                return [  # [ [name, author, is_read], [name, author, is_read] ]
+                    {
+                        "name": item[0],
+                        "author": item[1],
+                        "is_read": item[2]
+                    }
+                    for item in data
+                ]
+            else:
+                raise EmptyDatabase()
     except FileNotFoundError:
         _create_data_table()
-
-        return []
 
 
 def mark(name):
@@ -41,9 +42,9 @@ def mark(name):
                 break
 
         if not is_found:
-            print("Nothing found! Thy to check your spelling")
+            raise ContentNotFound()
     else:
-        print("Book list is empty, nothing to mark as read!")
+        raise EmptyDatabase()
 
 
 def remove(name):
@@ -60,9 +61,9 @@ def remove(name):
                 break
 
         if not is_found:
-            print("Nothing found! Thy to check your spelling")
+            raise ContentNotFound()
     else:
-        print("Book list is empty, nothing to remove!")
+        raise EmptyDatabase()
 
 
 def _save_all(books):
@@ -74,3 +75,5 @@ def _save_all(books):
 def _create_data_table():
     with open(books_file, "w"):
         pass
+
+    print("File wasn't found, created one")
