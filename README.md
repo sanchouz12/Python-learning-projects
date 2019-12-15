@@ -6,3 +6,4 @@ There are the folowing projects:
 * You can add, find and see your movies
 3. App with files
 * This app is for practicing using files
+4. Wery simple logger
