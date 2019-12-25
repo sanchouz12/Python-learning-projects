@@ -7,3 +7,4 @@ There are the folowing projects:
 3. App with files
 * This app is for practicing using files
 4. Wery simple logger
+5. Decorators templates
