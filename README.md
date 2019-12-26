@@ -21,3 +21,6 @@ Just to remember
 
 ### Simple Flask API
 It has no architecture principles
+
+### Simple Flask RESTful API
+Uses REST principles
