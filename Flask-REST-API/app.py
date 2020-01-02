@@ -1,15 +1,27 @@
-import random
-
 from flask import Flask, request
 from flask_restful import Resource, Api
+from flask_jwt import JWT, jwt_required
+
+from dotenv import load_dotenv
+import os
+
+from security import authenticate, identity
+
+load_dotenv()
 
 app = Flask(__name__)
+app.secret_key = os.getenv("SECRET_KEY")
 api = Api(app)
+
+# /auth
+# returns token, if everything is ok
+jwt = JWT(app, authenticate, identity)
 
 items = []
 
 
 class Item(Resource):
+    @jwt_required()
     def get(self, item_id):
         # bad request
         try:
