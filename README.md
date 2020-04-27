@@ -28,9 +28,13 @@ Just to remember.
 
 It has no architecture principles.
 
-### Mathplotlib 
+### Mathplotlib random walk
 
 It consists of 2 visualization examples: graph of squares and graph of random walk.
+
+### Pygal dice rolling visualization
+
+This project visualises frequency of rolling results in a hystogram, that's saved in an .svg file.
 
 ## Getting Started
 
