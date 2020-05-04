@@ -1,4 +1,4 @@
-# Python learning project
+# Python learning projects
 
 There are some small Python projects, that I created to practice some technologies or to save some useful features.
 
@@ -75,5 +75,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * Mathplotlib project is an experimental field of mathplotlib project from book "Python crash course" by Eric Matthes.
+* Pygal project is an improved version of pygal project from book "Python crash course" by Eric Mattes.
 * All the others projects, except calculator, are created by following [The complete Python course](https://www.udemy.com/course/the-complete-python-course/).
 
