@@ -38,7 +38,8 @@ This project visualises frequency of rolling results in a hystogram, that's save
 
 ## Getting Started
 
-If you'd like to get a copy of this projects, do the following:
+### Installing
+
 1. Clone the repository or download archive 
 ```
 git clone https://github.com/sanchouz12/Python-learning-projects
@@ -77,4 +78,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Mathplotlib project is an experimental field of mathplotlib project from book "Python crash course" by Eric Matthes.
 * Pygal project is an improved version of pygal project from book "Python crash course" by Eric Mattes.
 * All the others projects, except calculator, are created by following [The complete Python course](https://www.udemy.com/course/the-complete-python-course/).
-
